@@ -98,12 +98,26 @@ def main():
                         print("Enter your accounts name")
                         g_account = input()
                         print("-" * 20)
-                        g_password = getpass("Enter your password or leave blank to generate password")
-                        print('\n')
+                        print("Generate password?(Y/N)")
+                        gen = input()
+                        gen = gen.lower()
+                        if gen == 'y':
+                            print("What password length do you prefer: ")
+                            length = input()
+                            g_password = generate(length)
+                            save_password(create_social(g_media,g_account,g_password))
+                            print(f"Your new password is {g_password}")
+                            print('\n')
+                        else:
+                            print("-" * 20)
+                            print("Enter your password or press enter to generate password")
+                            g_password = input()
+                            save_password(create_social(g_media,g_account,g_password))
+                            print(f"Your password is {g_password}")
+                            print('\n')
 
-                        save_password(create_social(g_media,g_account,g_password))
                         print("-" * 20)
-                        print(f"New Account for {g_media} @ {g_account} created")
+                        print(f"New Account for {g_media} @ {g_account} created {g_password}")
                         print("-" * 20)
                         print('\n')
 
@@ -112,8 +126,10 @@ def main():
                             print("****existing accounts****")
                             print("-" * 20)
 
+                            # print(display_existing_accounts())
+
                             for acc in display_existing_accounts():
-                                print(f"{acc.media}................{acc.account}")
+                                print(f"{acc.media}..........{acc.account}........{acc.password}")
                                 print("-" * 20)
 
                         print('\n')

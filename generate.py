@@ -40,7 +40,7 @@ class Generator:
 
         password = password + first
         random.shuffle(password)
-        cls.passwords.append(password)
+        password = "".join(password)
 
         return password
 
