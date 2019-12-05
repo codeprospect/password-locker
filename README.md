@@ -47,7 +47,7 @@ _$ ./run.py_
 
 ### Author
 
-* Author: codeprospect waikaumaina1@gmail.com
+* Author: codeprospect <waikaumaina1@gmail.com>
 * Date: Sunday 1st December 2019
 
 ----------------
