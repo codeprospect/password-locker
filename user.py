@@ -17,5 +17,5 @@ class User:
     @classmethod
     def find_by_name(cls, name):
         for user in cls.users:
-            if user.firstName == name:
+            if user.firstName == name: 
                 return user
